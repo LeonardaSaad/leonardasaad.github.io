@@ -1,0 +1,143 @@
+@import "./variables";
+
+@mixin wh($w, $h) {
+    width: $w;
+    height: $h;
+}
+
+@mixin maxWH($maxW, $maxH) {
+    max-width: $maxW;
+    max-height: $maxH;
+}
+@mixin minWH($minW, $minH) {
+    min-width: $minW;
+    min-height: $minH;
+}
+
+@mixin fb($d, $fd, $ai, $jc) {
+    display: $d;
+    flex-direction: $fd;
+    align-items: $ai;
+    justify-content: $jc;
+}
+
+@mixin flex($direction, $justify) {
+    @include fb(flex, $direction, center, $justify);
+}
+
+@mixin shake-animation() {
+    &:active {
+        -webkit-animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+        animation: shake-horizontal 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+    }
+}
+
+@mixin card($color) {
+    @include flex(row, center);
+    padding: 0.5em 1em;
+    border: 0.15em solid;
+    border-radius: 0.2em;
+    background-color: #fff;
+    font-weight: 500;
+    margin: 0.5em 0.4em;
+    border-color: $primaryC;
+    color: $primaryC;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    @include shake-animation();
+
+    img {
+        width: 1.5em;
+        margin-right: 0.2em;
+    }
+
+    @if $color == blue {
+        border-color: $secondaryC;
+        color: $secondaryC;
+    }
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+            rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+        transition: 0.4s;
+    }
+}
+
+@mixin project() {
+    @include fb(flex, column, start, default);
+    width: 28vw;
+    max-width: 240px;
+    min-width: 230px;
+    border: 0.3vw solid $primaryC;
+    border-radius: 0.2em;
+    margin: 1em 0.4em;
+    color: $primaryC;
+    transition: 0.4s;
+
+    &:hover {
+        transform: scale(1.04);
+        transition: 0.4s;
+
+        img {
+            filter: none;
+        }
+
+        div {
+            transition: all 0.5s;
+            position: relative;
+            left: 0;
+            top: 0;
+            color: $primaryC;
+            width: 26.4vw;
+            max-width: 224px;
+            min-width: 214px;
+            padding: 5px 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            border-top: 0.1em solid #fff;
+            height: 100%;
+        }
+
+        p {
+            color: $primaryC;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 10em;
+        border-bottom: 0.25em solid $secondaryC;
+        margin-bottom: 2px;
+        filter: blur(4px) brightness(0.3);
+    }
+
+    h3 {
+        font-size: 1em;
+        text-align: center;
+    }
+
+    p {
+        font-size: 0.8em;
+        color: rgba(238, 238, 238, 0.83);
+        text-align: center;
+    }
+
+    div {
+        position: relative;
+        color: #fff;
+        top: -100px;
+        left: 65px;
+        height: 0;
+    }
+}
+
+@mixin line($color, $heigth) {
+    width: 100vw;
+    height: $heigth;
+    background-color: $primaryC;
+
+    @if $color == blue {
+        background-color: $secondaryC;
+    }
+}

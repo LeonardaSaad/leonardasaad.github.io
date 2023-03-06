@@ -1,0 +1,62 @@
+@import "./base/typography";
+@import "./util/variables";
+@import "./util/fonts";
+@import "./util/mixins";
+@import "./layouts/header";
+@import "./layouts/main";
+@import "./layouts/footer";
+@import "./components/home";
+@import "./components/aboult";
+@import "./components/_skills.scss";
+@import "./components/_projects.scss";
+@import "./components/contacts.scss";
+@import "./util/keyframes";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+body {
+    font-family: $font;
+    font-size: 1em;
+    color: $primaryC;
+    background-color: $bgColor;
+}
+
+.container {
+    padding: 0 15vw;
+    width: 70vw;
+    @include flex(column, center);
+}
+
+.header,
+.main {
+    width: 100%;
+    max-width: 800px;
+}
+
+.footer {
+    position: absolute;
+    margin-top: 5vh;
+}
+
+a, Link {
+    border: none;
+    text-decoration: none;
+    color: $primaryC;
+}
+
+
+@media only screen and (max-width: $phone) {
+    .container {
+        padding: 0 10vw;
+        width: 80vw;
+    }
+}

@@ -1,0 +1,37 @@
+@import "../util/fonts";
+@import "../util/variables";
+@import "../util/mixins";
+
+.skills {
+    &__content {
+        @include flex(row, space-around);
+        justify-items: start;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    &__skill-blue {
+        @include card(blue);
+    }
+
+    &__skill-black {
+        @include card(black);
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    .skills {
+        &__content {
+            @include flex(row, space-evenly);
+        }
+    }
+}
+
+@media screen and (max-width: $phone) {
+    .skills {
+        &__content {
+            @include flex(row, center);
+        }
+    }
+}
+

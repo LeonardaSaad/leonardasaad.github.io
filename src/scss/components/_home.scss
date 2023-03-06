@@ -1,0 +1,235 @@
+@import "../util/mixins";
+@import "../util/variables";
+@import "../util/fonts";
+
+.home {
+    @include flex(row, space-between);
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 15vh;
+
+    &__title h1 {
+        font-size: 2em;
+        font-weight: 100;
+        margin: 0;
+        max-width: 235px;
+    }
+
+    &__title-name h1 {
+        color: $secondaryC;
+        font-size: 2.2em;
+        margin: 0;
+    }
+
+    &__column2 {
+        width: 22vw;
+        max-width: 430px;
+        min-width: 300px;
+        min-height: 183px;
+    }
+
+    &__sub-title {
+        width: 10vw;
+        font-size: 3em;
+        font-family: $fontSecondary;
+        color: $secondaryC;
+        text-align: right;
+        z-index: 10;
+    }
+
+    &__column2 img {
+        width: 15vw;
+        float: right;
+        min-width: 200px;
+        max-width: 278px;
+        shape-outside: polygon(23.67% 0px, 100% 0px, 100% 100%, 43.49% 98.93%, 22.16% 78%, 26px 57.26%, 22.49% 41.81%);
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: $LGdesktop) {
+    .home {
+        &__title h1 {
+            font-size: 2vw;
+        }
+
+        &__title-name h1{
+            font-size: 2.2vw;
+        }
+
+        &__column2 {
+            width: 22vw;
+            max-width: 430px;
+            min-width: 300px;
+            min-height: 183px;
+        }
+
+        &__sub-title {
+            width: 10vw;
+            font-size: 3vw;
+        }
+
+        &__column2 img {
+            min-width: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: $desktop) {
+    .home {
+        &__title h1 {
+            font-size: 3vw;
+        }
+
+        &__title-name h1 {
+            font-size: 3.2vw;
+        }
+
+        &__column2 {
+            width: 31vw;
+            max-width: 400px;
+            min-width: 270px;
+            min-height: 183px;
+        }
+
+        &__sub-title {
+            width: 16vw;
+            font-size: 4vw;
+        }
+
+        &__column2 img {
+            width: 22vw;
+            min-width: 200px;
+        }
+    }
+}
+
+@media only screen and (max-width: $tablet) {
+    .home {
+        &__title h1 {
+            font-size: 3.6vw;
+        }
+
+        &__title-name h1 {
+            font-size: 4vw;
+        }
+
+        &__column2 {
+            width: 40vw;
+            max-width: 320px;
+            min-width: 180px;
+            min-height: 118px;
+        }
+
+        &__sub-title {
+            width: 20vw;
+            font-size: 4.8vw;
+        }
+
+        &__column2 img {
+            width: 25vw;
+            max-width: 210px;
+            min-width: 120px;
+            shape-outside: polygon(
+                23.67% 0px,
+                100% 0px,
+                100% 100%,
+                43.49% 98.93%,
+                10.83% 78%,
+                26px 57.26%,
+                22.49% 41.81%
+            );
+        }
+    }
+}
+
+@media only screen and (max-width: $phone) {
+    .home {
+        @include fb(flex, row, space-between, space-between);
+        width: 100%;
+        margin-top: 10vh;
+
+        &__title h1 {
+            font-size: 5.2vw;
+        }
+
+        &__title-name h1 {
+            font-size: 5.6vw;
+        }
+
+        &__columnAA {
+            width: 100%;
+            @include fb(flex, row-reverse, right, right);
+        }
+
+        &__column2 {
+            width: 60vw;
+            max-width: 310px;
+            min-width: 310px;
+            max-height: 200px;
+            min-height: 200px;
+            margin-top: 4vh;
+        }
+
+        &__sub-title {
+            width: 33vw;
+            font-size: 2.7em;
+        }
+
+        &__column2 img {
+            width: 50vw;
+            min-width: 200px;
+            shape-outside: polygon(
+                23.67% 0px,
+                100% 0px,
+                100% 100%,
+                43.49% 98.93%,
+                10.83% 78%,
+                26px 57.26%,
+                22.49% 41.81%
+            );
+        }
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .home {
+        &__title h1 {
+            font-size: 8vw;
+        }
+
+        &__title-name h1 {
+            font-size: 8.2vw;
+        }
+
+        &__column2 {
+            width: 75vw;
+            max-width: 260px;
+            min-width: 170px;
+            max-height: 200px;
+            min-height: 110px;
+            margin-top: 4vh;
+        }
+
+        &__sub-title {
+            width: 33vw;
+            min-width: 80px;
+            font-size: 10vw;
+        }
+
+        &__column2 img {
+            width: 50vw;
+            max-width: 180px;
+            min-width: 110px;
+            shape-outside: polygon(
+                23.67% 0px,
+                100% 0px,
+                100% 100%,
+                43.49% 98.93%,
+                10.83% 78%,
+                26px 57.26%,
+                22.49% 41.81%
+            );
+        }
+    }
+}

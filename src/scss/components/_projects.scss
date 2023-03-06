@@ -1,0 +1,123 @@
+@import "../util/mixins";
+@import "../util/variables";
+@import "../util/fonts";
+
+.projects {
+    width: 100%;
+
+    &__vitrine {
+        display: flex;
+        flex-wrap: wrap;
+        display: grid;
+        grid-gap: .5em;
+        grid-template-columns: repeat(auto-fit, minmax(220px, max-content));
+        justify-content: space-around;
+        max-width: 800px;
+    }
+
+    a {
+        display: block;
+        @include wh(20vw, 100%);
+        @include maxWH(250px, 172px);
+        @include minWH(220px, 160px);
+    }
+
+    &__cardImg,
+    &__imgBx {
+        @include wh(20vw, 100%);
+        @include maxWH(250px, 172px);
+        @include minWH(220px, 160px);
+        transition: 0.5s;
+    }
+
+    &__cardImg {
+        @include fb(flex, column, center, center);
+        position: relative;
+        border-radius: 0.5em;
+    }
+
+    &__imgBx img {
+        filter: blur(1px) brightness(0.5);
+        @include wh(100%, 100%);
+        transition: 0.8s;
+    }
+
+    &__details {
+        @include fb(flex, column, center, center);
+        @include wh(100%, 100%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        transition: 0.5s;
+    }
+
+    &__description {
+        @include fb(flex, column, center, default);
+    }
+
+    &__title {
+        font-weight: 500;
+        color: #fff;
+    }
+
+    &__linguages svg {
+        width: 20px;
+        margin: 1px;
+        fill: #fff;
+    }
+
+    &__date {
+        display: none;
+    }
+
+    a:hover {
+        @include wh(default, 230px);
+        @include maxWH(260px, 230px);
+        @include minWH(220px, 160px);
+        z-index: 1;
+        border-radius: 0.5em;
+        transform: scale(1.1);
+
+        .projects__imgBx img {
+            filter: none;
+            border-radius: 0.5em 0.5em 0 0;
+            border: 1px solid $primaryC;
+        }
+
+        .projects__details {
+            align-items: flex-start;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 92%;
+            height: 28%;
+            padding: 2% 4%;
+            transform: translate(0%, 0%);
+            background: #fff;
+            border: 1px solid $secondaryC;
+            border-radius: 0 0 0.5em 0.5em;
+            font-size: 0.9em;
+        }
+
+        .projects__description {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        .projects__title {
+            color: $primaryC;
+        }
+
+        svg {
+            fill: $secondaryC;
+        }
+
+        .projects__date {
+            display: block;
+            color: $colorSecondary;
+        }
+    }
+}
