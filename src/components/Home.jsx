@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import computador from "../assets/img/computer.png";
-import TypeWriterEffect from "react-typewriter-effect";
+// import TypeWriterEffect from "react-typewriter-effect";
 
 export class Home extends Component {
   render() {
     return (
       <div className="home" id="home">
-        <div className="home__title">
+        {/* <div className="home__title">
           <h1>
             <TypeWriterEffect
               textStyle={{ fontFamily: "DM Sans" }}
@@ -48,7 +48,7 @@ export class Home extends Component {
               hideCursorAfterText="false"
             />
           </h1>
-        </div>
+        </div> */}
 
         <div className="home__columnAA">
           <div className="home__column2">

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { HashLink as Link } from "react-router-hash-link";
-import { NavLink } from "react-router-dom";
-import "./Main";
 
 export class Header extends Component {
   render() {
