@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cl-primary: var(--cl-primary);
+  --color-cl-lightGray: var(--cl-lightGray);
+  --color-cl-bg: var(--cl-bg);
+  --color-cl-b0: rgb(0, 0, 0);
+  --color-cl-w0: var(--w);
+  --color-gradient-black: var(--gradient-black);
+  --color-gradient-white: var(--gradient-white);
+
+  --font-*: initial;
+
+  --breakpoint-xs: 35rem;
+}
+
+@layer base {
+  :root {
+    --cl-primary: #edb276;
+    --cl-lightGray: #a8a8a8;
+    --cl-bg: #232323;
+
+    --b: rgb(0, 0, 0);
+    --w: rgb(255, 255, 255);
+    --gradient-black: rgba(0, 0, 0, 0.1);
+    --gradient-white: rgba(255, 255, 255, 0.1);
+  }
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cl-bg);
+  color: var(--cl-lightGray);
+  width: 100%;
+  height: 100%;
+  max-width: 100vw;
+}
+
+body {
+  font-family: "JetBrains Mono", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-shadow: inset 0 0 100px 80px rgba(0, 0, 0, 0.5);
+}
+
+a:hover {
+  opacity: 50%;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-center-left {
+  display: flex;
+  justify-content: center;
+  align-items: left;
+}
+
+.flex-left-center {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.inset-shadow {
+  background: transparent;
+  box-shadow: inset 40px 0 40px -20px rgba(0, 0, 0, 0.5),
+    /* Sombra na esquerda */ inset -60px 0 60px -20px rgba(0, 0, 0, 0.5); /* Sombra na direita */
+}
+
+.fade-slide {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.fade-slide.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animation {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-image: repeating-radial-gradient(
+    circle at 17% 32%,
+    white,
+    black 0.00085px
+  );
+  animation: tv-static 10s linear infinite;
+  opacity: 5%;
+  pointer-events: none;
+  user-select: none;
+}
+
+@keyframes tv-static {
+  from {
+    background-size: 100% 100%;
+  }
+
+  to {
+    background-size: 200% 200%;
+  }
+}
