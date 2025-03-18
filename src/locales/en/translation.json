@@ -25,10 +25,10 @@
         "technologies": ["react", "javascript", "tailwindcss", "vite"]
       },
       {
-        "name": "CHD Digital Point",
+        "name": "CHD Digital Punch Clock",
         "imgURL": "https://i.imgur.com/eyUHhAA.png",
         "imgAlt": "",
-        "label": "CHD Digital Point",
+        "label": "CHD Digital Punch Clock",
         "link": "https://github.com/LeonardaSaad/PE-POOJava",
         "content": "CHD Ponto Digital is a system developed for academic purposes, aimed at the management and recording of employee points. It allows efficient control of entry and exit times during business hours, using Java for system logic and a web interface built with React, Shadcn-UI, TailwindCSS and Vite.",
         "technologies": [
