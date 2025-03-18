@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { useTranslation } from "react-i18next";
+
 import arrow from "../assets/svg/icons_arrow-up.svg";
 
 import LineSectionButton from "./LineSectionButton";
@@ -7,18 +9,19 @@ import LineSectionContent from "./LineSectionContent";
 import Project from "./Project";
 import Technologies from "./Technologies";
 
-import projectsJSON from "../projects.json";
-
 const Home = () => {
   const [componentHover, setComponentHover] = useState("none");
   const [handleClick, setHandleClick] = useState("none");
   const [isAnimating, setIsAnimating] = useState(false);
 
+  // Translation using i18next
+  const { t, i18n } = useTranslation();
+  // Projects array
+  const projects = t("projects.content", { returnObjects: true });
+
   // Styles
   const buttonCarouselStyle =
     "cursor-pointer min-w-[40px] min-h-[40px] absolute z-40 flex justify-center items-center border-2 rounded-full bg-[#454545]";
-
-  const projects = projectsJSON["projects"];
 
   const [renderProjectArray, setRenderProjectArray] = useState([
     projects.length - 2,
@@ -68,13 +71,12 @@ const Home = () => {
   };
 
   return (
-    <div className="flex flex-1 flex-col justify-center items-center gap-4 box-border py-20">
+    <div className="flex flex-1 flex-col justify-center items-center h-screen gap-4 box-border py-20">
       {/* *NOTE - About */}
       <LineSectionButton
-        label="about"
-        isActive={handleClick === "about"}
-        otherActive={handleClick == "tech" || handleClick == "projects"}
-        hover={componentHover == "about"}
+        label={t("about.title")}
+        isActive={handleClick === t("about.title")}
+        hover={componentHover == t("about.title")}
         onActive={setHandleClick}
         onHover={setComponentHover}
         version="1"
@@ -82,35 +84,91 @@ const Home = () => {
 
       {/* *NOTE - About - Hover component */}
       <LineSectionContent
-        label="about"
-        isActive={handleClick === "about"}
+        label={t("about.title")}
+        isActive={handleClick === `${t("about.title")}`}
         onClose={setHandleClick}
         version="1"
       >
-        <div className="flex flex-col gap-4 sm:p-4 md:p-10">
-          <p className="text-base !font-light">
-            I am{" "}
-            <span className="text-cl-primary font-bold">
-              Leonarda Saad {`:)`}
-            </span>
-          </p>
-          <p className="text-base !font-light text-justify">
-            I’m a Computer Science student, currently in the 6th semester, with
-            focus on front-end development and growing interest in full-stack
-            solutions. I constantly seek to improve my skills through courses in
-            the area of programming and participation in academic projects and
-            personal development, exploring good design practices and user
-            experience.
-          </p>
+        <div className="flex-column gap-10 sm:p-4 md:p-10">
+          <div className="flex-column gap-4">
+            <p className="text-base !font-light">
+              {t("about.content.part1")}
+              <span className="text-cl-primary font-bold">
+                Leonarda Saad {`:)`}
+              </span>
+            </p>
+            <p className="text-base !font-light text-justify">
+              {t("about.content.part2")}
+            </p>
+          </div>
+
+          <div className="flex gap-10 font-bold text-base text-cl-primary opacity-80">
+            <a
+              className="flex-center gap-2 "
+              href="https://github.com/LeonardaSaad"
+              target="_blank"
+            >
+              Github
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.48202 13.6171L11.2329 7.8662L11.6291 12.6185L13.1235 12.4944L12.5407 5.49775L5.54407 4.91491L5.41997 6.40938L10.1723 6.80554L4.42136 12.5564L5.48202 13.6171Z"
+                  fill="#edb276"
+                />
+              </svg>
+            </a>
+            <a
+              className="flex-center gap-2"
+              href="https://www.linkedin.com/in/leonarda-saad/"
+              target="_blank"
+            >
+              LinkedIn
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.48202 13.6171L11.2329 7.8662L11.6291 12.6185L13.1235 12.4944L12.5407 5.49775L5.54407 4.91491L5.41997 6.40938L10.1723 6.80554L4.42136 12.5564L5.48202 13.6171Z"
+                  fill="#edb276"
+                />
+              </svg>
+            </a>
+            <a
+              className="flex-center gap-2"
+              href="mailto:saad.leonarda@gmail.com"
+              target="_blank"
+            >
+              Mail
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M5.48202 13.6171L11.2329 7.8662L11.6291 12.6185L13.1235 12.4944L12.5407 5.49775L5.54407 4.91491L5.41997 6.40938L10.1723 6.80554L4.42136 12.5564L5.48202 13.6171Z"
+                  fill="#edb276"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
       </LineSectionContent>
 
       {/**NOTE - Technologies */}
       <LineSectionButton
-        label="tech"
-        isActive={handleClick == "tech"}
-        otherActive={handleClick == "about" || handleClick == "projects"}
-        hover={componentHover == "tech"}
+        label={t("tech.title")}
+        isActive={handleClick == t("tech.title")}
+        hover={componentHover == t("tech.title")}
         onActive={setHandleClick}
         onHover={setComponentHover}
         version="2"
@@ -118,8 +176,8 @@ const Home = () => {
 
       {/* *NOTE - Technologies - Hover component */}
       <LineSectionContent
-        label="tech"
-        isActive={handleClick === "tech"}
+        label={t("tech.title")}
+        isActive={handleClick === t("tech.title")}
         onClose={setHandleClick}
         version="2"
         id="tech"
@@ -164,7 +222,7 @@ const Home = () => {
           {/* Tools */}
           <div className="flex flex-col gap-2">
             <p className="text-cl-primary text-md font-light">
-              <span className="font-bold">{`>`}</span> tools
+              <span className="font-bold">{`>`}</span> {t("tech.content.tools")}
             </p>
 
             <div className="flex gap-5 font-light text-base ml-6 flex-wrap">
@@ -179,10 +237,9 @@ const Home = () => {
 
       {/**NOTE - Projects */}
       <LineSectionButton
-        label="projects"
-        isActive={handleClick == "projects"}
-        otherActive={handleClick == "about" || handleClick == "tech"}
-        hover={componentHover == "projects"}
+        label={t("projects.title")}
+        isActive={handleClick == t("projects.title")}
+        hover={componentHover == t("projects.title")}
         onActive={setHandleClick}
         onHover={setComponentHover}
         version="2"
@@ -190,8 +247,8 @@ const Home = () => {
 
       {/* *NOTE - Projects - Hover component */}
       <LineSectionContent
-        label="projects"
-        isActive={handleClick === "projects"}
+        label={t("projects.title")}
+        isActive={handleClick === t("projects.title")}
         onClose={setHandleClick}
         version="2"
       >

@@ -4,14 +4,13 @@ import circleBorder from "../assets/svg/circle-border.svg";
 const LineSectionButton = ({
   label,
   isActive,
-  otherActive,
   hover,
   onActive,
   onHover,
   version,
 }) => {
   const imgStyleClass = `opacity-10 w-[20vw] max-w-[130px] md:max-w-[150px] pointer-events-none ${
-    hover ? "opacity-20" : otherActive ? "!opacity-5" : ""
+    hover ? "opacity-20" : ""
   }`;
 
   return (

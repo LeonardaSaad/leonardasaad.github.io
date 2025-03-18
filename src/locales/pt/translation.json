@@ -1,0 +1,54 @@
+{
+  "about": {
+    "title": "sobre",
+    "content": {
+      "part1": "Eu sou a ",
+      "part2": "Sou estudante de Ciência da Computação, atualmente no 6o semestre, com foco em desenvolvimento front-end e crescente interesse em soluções full-stack. Procuro constantemente melhorar as minhas competências através de cursos na área da programação e participação em projectos académicos e desenvolvimento pessoal, explorando boas práticas de design e experiência do utilizador."
+    }
+  },
+  "tech": {
+    "title" : "tech",
+    "content" : {
+      "tools" : "ferramentas"
+    }
+  },
+  "projects": {
+    "title": "projetos",
+    "content": [
+      {
+        "name": "NASA API Project",
+        "imgURL": "https://i.imgur.com/SPaswHb.png",
+        "imgAlt": "",
+        "label": "NASA API Project",
+        "link": "https://github.com/LeonardaSaad/nasa-api-project",
+        "content": "Este site foi desenvolvido como parte de um projeto para estudar e demonstrar o uso das APIs públicas da NASA. O objetivo é explorar como várias tecnologias podem ser integradas para fornecer dados espaciais, imagens e eventos científicos de uma forma acessível.",
+        "technologies": ["react", "javascript", "tailwindcss", "vite"]
+      },
+      {
+        "name": "CHD Digital Point",
+        "imgURL": "https://i.imgur.com/eyUHhAA.png",
+        "imgAlt": "",
+        "label": "CHD Digital Point",
+        "link": "https://github.com/LeonardaSaad/PE-POOJava",
+        "content": "CHD Ponto Digital é um sistema desenvolvido para fins acadêmicos, voltado ao gerenciamento e registro de pontos dos colaboradores. Permite o controle eficiente dos horários de entrada e saída durante o horário comercial, usando Java para a lógica do sistema e uma interface web construída com React, Shadcn-UI, TailwindCSS e Vite.",
+        "technologies": [
+          "java",
+          "react",
+          "javascript",
+          "shadcnui",
+          "tailwindcss",
+          "vite"
+        ]
+      },
+      {
+        "name": "Pokedex",
+        "imgURL": "https://i.imgur.com/SsuK6x2.png",
+        "imgAlt": "",
+        "label": "Pokedex",
+        "link": "https://leonardasaad.github.io/pokedex/",
+        "content": "O Pokédex Project é um site que permite aos utilizadores navegar e procurar Pokémon, exibindo informações. Obtém dados da PokéAPI para fornecer atualizações em tempo real sobre as características dos Pokémon.",
+        "technologies": ["html", "javascript", "css"]
+      }
+    ]
+  }
+}
