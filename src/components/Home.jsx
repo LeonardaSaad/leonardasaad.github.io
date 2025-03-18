@@ -102,9 +102,9 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="flex gap-10 font-bold text-base text-cl-primary opacity-80">
+          <div className="flex flex-col gap-3 font-bold text-base text-cl-primary opacity-80 sm:flex-row sm:gap-10">
             <a
-              className="flex-center gap-2 "
+              className="flex items-center gap-2 "
               href="https://github.com/LeonardaSaad"
               target="_blank"
             >
@@ -123,7 +123,7 @@ const Home = () => {
               </svg>
             </a>
             <a
-              className="flex-center gap-2"
+              className="flex items-center gap-2"
               href="https://www.linkedin.com/in/leonarda-saad/"
               target="_blank"
             >
@@ -142,7 +142,7 @@ const Home = () => {
               </svg>
             </a>
             <a
-              className="flex-center gap-2"
+              className="flex items-center gap-2"
               href="mailto:saad.leonarda@gmail.com"
               target="_blank"
             >

@@ -7,7 +7,7 @@ const LineSectionContent = ({
 }) => {
   return (
     <div
-      className={`w-[96%] md:w-[40%] lg:w-[70%] xl:w-[70%] 2xl:w-[52%] ${
+      className={`w-[96%] md:w-[90%] lg:w-[70%] xl:w-[70%] 2xl:w-[52%] ${
         isActive ? "block absolute" : "hidden"
       }`}
     >
