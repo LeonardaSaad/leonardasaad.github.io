@@ -28,7 +28,7 @@
         "name": "CHD Ponto Digital",
         "imgURL": "https://i.imgur.com/eyUHhAA.png",
         "imgAlt": "",
-        "label": "CHD Digital Point",
+        "label": "CHD Ponto Digital",
         "link": "https://github.com/LeonardaSaad/PE-POOJava",
         "content": "CHD Ponto Digital é um sistema desenvolvido para fins acadêmicos, voltado ao gerenciamento e registro de pontos dos colaboradores. Permite o controle eficiente dos horários de entrada e saída durante o horário comercial, usando Java para a lógica do sistema e uma interface web construída com React, Shadcn-UI, TailwindCSS e Vite.",
         "technologies": [
